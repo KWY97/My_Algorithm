@@ -1,11 +1,25 @@
-def find_max_plus_or_multiply(array):
+def find_prime_list_under_number(number):
+    prime_list = []
+    number_list = []
 
+    if M == 1:
+        for i in range(2, number + 1):
+            number_list.append(i)
+    else:
+        for i in range(M, number + 1):
+            number_list.append(i)
 
+    for num in number_list:
+        temp_li = []
+        for i in range(2, num + 1):
+            if num % i == 0:
+                temp_li.append(i)
+        if len(temp_li) == 1:
+            prime_list.append(num)
+    return prime_list
 
-    pass
+M, N = map(int, input().split())
+answer_list = find_prime_list_under_number(N)
 
-
-result = find_max_plus_or_multiply
-print("정답 = 728 현재 풀이 값 =", result([0,3,5,6,1,2,4]))
-print("정답 = 8820 현재 풀이 값 =", result([3,2,1,5,9,7,4]))
-print("정답 = 270 현재 풀이 값 =", result([1,1,1,3,3,2,5]))
+for answer in answer_list:
+    print(answer)
