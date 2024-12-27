@@ -6,11 +6,32 @@
 # 하지만, 처음부터 4번째 문자부터 5번째 문자까지 문자를 뒤집으면 한 번에 0000000이 되어서 1번 만에 모두 같은 숫자로 만들 수 있다.
 # 주어진 문자열을 모두 0 혹은 모두 1로 같게 만드는 최소 횟수를 반환하시오.
 
+# 0에서 1을 마주쳤을 때 뒤집는다 -> 전체를 0으로 만들기 위한 작업
+# 1에서 0을 마주쳤을 때 뒤집는다 -> 전체를 1으로 만들기 위한 작업
+
+
 input = "011110"
 
 def find_count_to_turn_out_to_all_zero_or_all_one(string):
-    # 이 부분을 채워보세요!
-    return 1
+    count_to_all_zero = 0
+    count_to_all_one = 0
+
+    # 문자열의 맨 앞이 0 이라면
+    if string[0] == '0':
+        count_to_all_one += 1
+    # 문자열의 맨 앞이 1 이라면
+    elif string[0] == '1':
+        count_to_all_zero += 1
+
+    for i in range(len(string) - 1):
+        if string[i] != string[i+1]:
+            # 0에서 1을 만난 경우
+            if string[i+1] == "1":
+                count_to_all_zero += 1
+            # 1에서 0을 만난 경우
+            if string[i+1] == "0":
+                count_to_all_one += 1
+    return min(count_to_all_zero, count_to_all_one)
 
 
 result = find_count_to_turn_out_to_all_zero_or_all_one(input)
