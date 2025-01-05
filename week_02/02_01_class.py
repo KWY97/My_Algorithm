@@ -6,6 +6,8 @@ class Person:
     def talk(self):
         print(f"안녕하세요 저는 '{self.name}'입니다.")
 
+
+
 person_1 = Person("유재석")
 person_1.talk()
 

@@ -29,6 +29,7 @@ class LinkedList:
             cur = cur.next
 
 
+
 linked_list = LinkedList(5)
 print(linked_list.head.data)
 
