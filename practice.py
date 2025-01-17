@@ -1,2 +1,1 @@
-a = 123
-test = 1
+test = int(input())
