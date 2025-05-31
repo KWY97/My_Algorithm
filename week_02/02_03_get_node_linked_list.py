@@ -20,8 +20,8 @@ class LinkedList:
             print(cur.data)
             cur = cur.next
 
-    # Q. 링크드 리스트에서 index번째 원소를 반환하시오.
     def get_node(self, index):
+        # "index 번째 노드를 반환해보세요!"
         cur = self.head
         cur_index = 0
 
@@ -32,8 +32,6 @@ class LinkedList:
         return cur
 
 
-
 linked_list = LinkedList(5)
 linked_list.append(12)
-my_node = (linked_list.get_node(0)) # -> 5를 들고 있는 노드를 반환해야 합니다!
-print(my_node.data)
+print(linked_list.get_node(0).data) # -> 5를 들고 있는 노드를 반환해야 합니다!

@@ -1,11 +1,10 @@
 class Person:
     def __init__(self, name_param):
         self.name = name_param
-        print("hihi i'm created")
+        print("hihi i am created", self, self.name)
 
     def talk(self):
-        print(f"안녕하세요 저는 '{self.name}'입니다.")
-
+        print("안녕하세요 저는", self.name, "입니다.")
 
 
 person_1 = Person("유재석")
