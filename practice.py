@@ -1,16 +1,41 @@
-T = int(input())
+def stack_arr(n, arr):
+    stack = []
+    num = 1
+    arr_idx = 0
+    result = []
 
-for tc in range(1, T+1):
-    n = int(input())
-    product_list = list(map(int, input().split()))
+    while True:
+        if not stack:
+            stack.append(num)
+            result.append('+')
+            num += 1
 
-    sum_cost = 0
-    max_val = 0
+        elif arr[arr_idx] == stack[-1]:
+            stack.pop()
+            result.append('-')
+            arr_idx += 1
 
-    for i in range(n-1, -1, -1):
-        if product_list[i] > max_val:
-            max_val = product_list[i]
+            if arr_idx == n:
+                break
         else:
-            sum_cost += max_val - product_list[i]
+            if n < num:
+                return "NO"
+                break
 
-    print(f'#{tc} {sum_cost}')
+            stack.append(num)
+            result.append('+')
+            num += 1
+    return result
+
+arr = []
+n = int(input())
+for _ in range(n):
+    arr.append(int(input()))
+
+ans = stack_arr(n, arr)
+
+if ans == "NO":
+    print(ans)
+else:
+    for x in ans:
+        print(x)
