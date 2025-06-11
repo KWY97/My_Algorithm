@@ -1,38 +1,8 @@
-def get_lines(n, w):
-    lines = -(-n // w)
-    return lines
+N, K = map(int, input().split())
+board = [list(map(int, input().split())) for _ in range(N)]
 
-def solution(n, w, num):
-    lines = get_lines(n, w)
-    answer = 1
-    boxes = []
-    cur = 1
+# 체스 말 정보: 말 번호 = 인덱스 + 1 (1번 말 -> 0번 인덱스)
+pieces = [list(map(int, input().split())) for _ in range(K)]
 
-    for i in range(lines):
-        if i % 2 == 0:
-            # 정순으로
-            for j in range(cur, cur + w):
-                boxes.append(j)
-            cur += w
-        else:
-            # 역순으로
-            for j in range(cur + w -1, cur - 1, -1):
-                boxes.append(j)
-            cur += w
-
-    for temp_num in range(cur-1, n, -1):
-        boxes[boxes.index(temp_num)] = 0
-
-    num_index = boxes.index(num)
-    next_index = num_index + w
-
-    while next_index < cur-1:
-        if boxes[next_index] == 0:
-            break
-
-        answer += 1
-        next_index += w
-
-    return answer
-
-print(solution(6, 5, 4))
+# 이동 번호: 1 오른쪽, 2 왼쪽, 3 위쪽, 4 아래쪽
+# 보드 색상: 0 흰색, 1 빨간색, 2 파란색
