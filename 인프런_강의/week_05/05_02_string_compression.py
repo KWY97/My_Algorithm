@@ -23,6 +23,7 @@ def string_compression(s):
                 else:  # 문자가 반복되지 않아 한번만 나타난 경우 1은 생략함
                     compressed += cur
                 count = 1  # 초기화
+
         if count > 1:
             compressed += (str(count) + splited[-1])
         else:  # 문자가 반복되지 않아 한번만 나타난 경우 1은 생략함
