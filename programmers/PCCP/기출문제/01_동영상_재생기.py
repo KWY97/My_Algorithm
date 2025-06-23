@@ -41,19 +41,3 @@ def solution(video_len, pos, op_start, op_end, commands):
     answer = minute + ":" + second
 
     return answer
-
-video_len = "10:55"
-pos = "00:05"
-op_start = "00:15"
-op_end = "06:55"
-commands = ["prev", "next", "next"]
-
-
-# video_len = "34:33"
-# pos = "13:00"
-# op_start = "00:55"
-# op_end = "02:55"
-# commands = ["next", "prev"]
-
-print(solution(video_len, pos, op_start, op_end, commands))
-
