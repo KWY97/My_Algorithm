@@ -1,23 +1,17 @@
-def gcd(n1, n2):
-    temp = n1 % n2
-
-    while temp != 0:
-        n1 = n2
-        n2 = temp
-        temp = n1 % n2
-
-    return n2
-
-
-c1, p1 = map(int, input().split())
-c2, p2 = map(int, input().split())
-
-cc = (c1 * p2) + (c2 * p1)
-cp = p1 * p2
-
-my_gcd = gcd(cc, cp)
-
-ans_c = cc // my_gcd
-ans_p = cp // my_gcd
-
-print(ans_c, ans_p)
+# abilities = list(map(int, input().split()))
+# total_ability = sum(abilities)
+# n = 6
+# ans = None
+#
+# for i in range(n-2):
+#     for j in range(i+1, n-1):
+#         for k in range(j+1, n):
+#             select = abilities[i] + abilities[j] + abilities[k]
+#             other = total_ability - select
+#
+#             temp = abs(select-other)
+#
+#             if ans is None or ans > temp:
+#                 ans = temp
+#
+# print(ans)
