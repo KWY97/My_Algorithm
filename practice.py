@@ -1,17 +1,18 @@
-# abilities = list(map(int, input().split()))
-# total_ability = sum(abilities)
-# n = 6
-# ans = None
-#
-# for i in range(n-2):
-#     for j in range(i+1, n-1):
-#         for k in range(j+1, n):
-#             select = abilities[i] + abilities[j] + abilities[k]
-#             other = total_ability - select
-#
-#             temp = abs(select-other)
-#
-#             if ans is None or ans > temp:
-#                 ans = temp
-#
-# print(ans)
+import sys
+input = sys.stdin.readline
+
+N, K = map(int, input().split())
+
+diff = []
+for _ in range(N):
+    A, B = map(int, input().split())
+    diff.append(B - A)
+
+diff.sort()
+
+answer = diff[K-1]
+
+if answer < 0:
+    answer = 0
+
+print(answer)
