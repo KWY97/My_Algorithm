@@ -30,7 +30,6 @@ class Solution(object):
 
 
 # 강의 풀이
-# 내 풀이
 # class Solution(object):
 #     def longestConsecutive(self, nums):
 #         """
