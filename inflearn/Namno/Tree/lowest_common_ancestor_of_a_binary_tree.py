@@ -1,4 +1,3 @@
-# 내 풀이
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
         if root is None:
