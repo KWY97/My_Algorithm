@@ -25,4 +25,3 @@ class Solution(object):
 #                 q.append([cur_node.right, cur_depth+1])
 #
 #         return max_depth
-
