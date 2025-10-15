@@ -1,5 +1,5 @@
 # nums = [1, 2, 3, 4]의 원소 중 k개를 사용한 조합을 반환하시오
-def subset(nums, k):
+def combination(nums, k):
     result = []
     def backtrack(start, curr):
         if len(curr) == k:
@@ -9,9 +9,10 @@ def subset(nums, k):
             curr.append(nums[i])
             backtrack(i+1, curr)
             curr.pop()
-    for k in range(len(nums)+1):
-        backtrack(0, [])
+
+
+    backtrack(0, [])
     return result
 
 
-print(subset([1, 2, 3, 4], 2))
+print(combination([1, 2, 3, 4], 2))

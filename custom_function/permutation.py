@@ -5,7 +5,7 @@ visited = [0] * len(arr)  # visited도 전역으로 둬도 됨
 
 def permutations(n, new_arr):
     global arr
-    # 순서 상관 0, 중복 X
+    # 순서 상관 O, 중복 X
     if len(new_arr) == n:
         print(new_arr)
         return
@@ -23,7 +23,7 @@ permutations(2, [])
 arr = [1, 2, 3, 4]
 def product(n, new_arr):
     global arr
-    # 순서 상관 0, 중복 0
+    # 순서 상관 O, 중복 O
     if len(new_arr) == n:
         print(new_arr)
         return

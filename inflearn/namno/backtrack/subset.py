@@ -1,4 +1,4 @@
-# nums = [1, 2, 3, 4]의 원소 중 k개를 사용한 조합을 반환하시오
+# nums = [1, 2, 3, 4]의 모든 부분집합을 반환하시오
 def subset(nums, k):
     result = []
     def backtrack(start, curr):
